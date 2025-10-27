@@ -10,9 +10,9 @@ Deploy and manage a simple Nginx application on a **local Kubernetes cluster** u
 
 ## 🛠️ Tools Used
 
-* **Minikube** – for local Kubernetes cluster setup
-* **kubectl** – for interacting with the cluster
-* **Docker** – to pull and run containerized applications
+* Minikube – for local Kubernetes cluster setup
+* kubectl – for interacting with the cluster
+* Docker – to pull and run containerized applications
 
 ---
 
@@ -37,7 +37,9 @@ kubectl cluster-info
 
 ### 3️⃣ Apply the deployment
 
+```bash
 kubectl apply -f deployment.yaml
+```
 
 ### 4️⃣ Expose the Application via Service
 
@@ -53,7 +55,9 @@ kubectl get pods
 
 ![deployment.png](./screenshots/deployment.png) 
 
+```bash
 kubectl get svc
+```
 
 ![service.png](./screenshots/service.png) 
 
@@ -75,14 +79,21 @@ curl http://$(minikube ip):30001
 
 ## 📈 Scaling the Deployment
 
+```bash
 kubectl scale deployment myapp-deployment --replicas=4
+```
 
+```bash
 kubectl get pods
+```
 
+```bash
 kubectl scale deployment myapp-deployment --replicas=1
+```
 
+```bash
 kubectl get pods
-
+```
 ![scale.png](./screenshots/scale.png) 
 
 ---
